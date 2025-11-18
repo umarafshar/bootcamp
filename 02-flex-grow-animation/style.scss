@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    perspective: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+
+    // gap: 0.5rem;
+
+    section {
+        height: 100%;
+        width: 100%;
+        display: flex;
+
+        div {
+            height: 100%;
+            padding: 1rem;
+            flex-grow: 1;
+            gap: .05rem;
+            background-size: cover;
+            background-position: center; // background-color: aqua;
+            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+            cursor: pointer;
+
+            color: white;
+            font-size: 2rem;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            h2 {
+                opacity: 0;
+                transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+        }
+
+        div:hover {
+            flex-grow: 8;
+
+            h2 {
+                opacity: 1;
+                transform: translateY(-100px);
+            }
+        }
+
+    }
+
+    div:nth-child(1) {
+        background-image: url("https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmF0bWFufGVufDB8MXwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=700");
+    }
+
+    div:nth-child(2) {
+        background-image: url("https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aXJvbiUyMG1hbnxlbnwwfDF8MHx8fDA%3D&auto=format&fit=crop&q=60&w=700");
+    }
+
+    div:nth-child(3) {
+        background-image: url("https://images.unsplash.com/photo-1501432377862-3d0432b87a14?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3VwZXIlMjBtYW58ZW58MHwxfDB8fHww&auto=format&fit=crop&q=60&w=700");
+    }
+
+    div:nth-child(4) {
+        background-image: url("https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3Jvb3R8ZW58MHwxfDB8fHww&auto=format&fit=crop&q=60&w=700");
+    }
+
+    div:nth-child(5) {
+        background-image: url("https://images.unsplash.com/photo-1623984109622-f9c970ba32fc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aXJvbiUyMG1hbnxlbnwwfDF8MHx8fDA%3D&auto=format&fit=crop&q=60&w=700");
+    }
+
+
+
+}
