@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(14, 13, 13, 0.8), rgba(0,0,0,1));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 12rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2em;
+}
+
+.hero__list {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);  
+    gap: 1rem;
+    place-content: center;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    width: 1200px;
+}
+
+.hero__item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    filter: brightness(0.1);
+    transition: all 0.3s ease-in;
+
+}
+
+.hero__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* transition: transform 0.8s ease; */
+}
+
+.hero__item:hover {
+    /* transform: scale(1.1); */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    filter: brightness(1);
+    transform: translateZ(200px);
+}
+
+/* To target the Right Neighbouring Element you can use this
+.hero__item:hover + .hero__item   OR
+.hero__item:hover + * */
+.hero__item:hover + * {
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(40deg);
+}
+
+.hero__item:hover + * + * {
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(20deg);
+}
+
+.hero__item:hover + * + * + * {
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotateY(10deg);
+}
+
+/* To target left Neighbouring, we ue :has */
+.hero__item:has(+ *:hover) {
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(-40deg);
+}
+
+.hero__item:has(+ * + *:hover) {
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(-20deg);
+}
+
+.hero__item:has(+ * + * + *:hover) {
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotateY(-10deg);
+}
+
